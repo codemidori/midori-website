@@ -1,85 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Midori Team</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Midori — Team</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
   <!-- NAVIGATION -->
-  <header>
-    <div class="nav-container">
-      <div class="logo">Midori</div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="team.html" class="active">Team</a></li>
-          <li><a href="#downloads">Download</a></li>
+  <header class="site-header" role="banner">
+    <div class="container nav-container">
+      <a href="index.html" class="logo" aria-label="Midori home">Midori</a>
+      <nav aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="team.html" class="nav-link is-active">Team</a></li>
+          <li><a href="index.html#downloads" class="nav-link">Download</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Meet the Team</h1>
-      <p>We are the creators of Midori, dedicated to making your code eco-friendly and efficient.</p>
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="team-hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <h1 id="team-hero">Meet the team behind Midori</h1>
+        <p class="lead">We’re building developer tools that make software leaner, faster, and more energy-aware—without changing behavior.</p>
+        <div class="hero-ctas">
+          <a href="index.html#features" class="btn btn-ghost">What we’re building</a>
+          <a href="index.html#downloads" class="btn btn-primary">Get Midori</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="code-card">
+          <div class="code-header">team.json</div>
+<pre class="code"><code>[
+  { "name": "Kenro Oyama", "role": "CEO" },
+  { "name": "Sohon Das",   "role": "COO" }
+]</code></pre>
+          <div class="result-bar">
+            <div class="metric">
+              <span class="label">Focus</span>
+              <span class="value">Energy-efficient devtools</span>
+            </div>
+            <a href="https://github.com/codemidori" class="btn btn-small">GitHub</a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- FOUNDERS SECTION -->
-  <section class="founders">
+  <!-- TEAM GRID -->
+  <section aria-labelledby="members-title">
     <div class="container">
-      <h2>Members</h2>
-      <div class="founder">
-        <div class="founder-image">
-          <img src="https://via.placeholder.com/400" alt="Kenro Oyama">
-        </div>
-        <div class="founder-info">
-          <h3>Kenro Oyama</h3>
-          <p><strong>CEO</strong></p>
-          <p>Y Combinator pls help us</p>
-          <div class="social-links">
-            <a href="https://www.linkedin.com/in/kenro-oyama/" class="social-icon">LinkedIn</a>
-            <a href="#" class="social-icon">GitHub</a>
+      <h2 id="members-title">Members</h2>
+
+      <!-- reuse the same card/grid system as index -->
+      <div class="info-cards" role="list">
+        <!-- Kenro -->
+        <article class="card" role="listitem">
+          <img src="https://via.placeholder.com/320x320" alt="Portrait of Kenro Oyama" />
+          <h3 style="margin-top:.25rem;">Kenro Oyama</h3>
+          <p style="color:var(--muted); margin-top:.25rem;"><strong>CEO</strong></p>
+          <p style="color:var(--muted); margin-top:.5rem;">
+            Product engineer focused on practical, hardware-aware performance. Building Midori to turn energy insights into one-click fixes.
+          </p>
+          <div class="social-links" style="justify-content:center; margin-top: .75rem;">
+            <a href="https://www.linkedin.com/in/kenro-oyama/" class="social-icon" aria-label="Kenro on LinkedIn">LinkedIn</a>
           </div>
-        </div>
-      </div>
-      <div class="founder reverse">
-        <div class="founder-image">
-          <img src="https://via.placeholder.com/400" alt="Member Two">
-        </div>
-        <div class="founder-info">
-          <h3>Sohon Das</h3>
-          <p><strong>COO</strong></p>
-          <p>sheeeeesh</p>
-          <div class="social-links">
-            <a href="https://www.linkedin.com/in/sohon-das-04476020b/" class="social-icon">LinkedIn</a>
-            <a href="#" class="social-icon">GitHub</a>
+        </article>
+
+        <!-- Sohon -->
+        <article class="card" role="listitem">
+          <img src="https://via.placeholder.com/320x320" alt="Portrait of Sohon Das" />
+          <h3 style="margin-top:.25rem;">Sohon Das</h3>
+          <p style="color:var(--muted); margin-top:.25rem;"><strong>COO</strong></p>
+          <p style="color:var(--muted); margin-top:.5rem;">
+            Operates the roadmap from prototype to production. Obsessed with developer experience and measurable wins.
+          </p>
+          <div class="social-links" style="justify-content:center; margin-top: .75rem;">
+            <a href="https://www.linkedin.com/in/sohon-das-04476020b/" class="social-icon" aria-label="Sohon on LinkedIn">LinkedIn</a>
           </div>
-        </div>
+        </article>
+
+        <!-- Add more members by copying a card -->
       </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="downloads" aria-labelledby="cta-title">
+    <div class="container">
+      <h2 id="cta-title">Want to try Midori?</h2>
+      <p>Install the VS Code extension and start optimizing your code’s energy profile today.</p>
+      <a href="https://marketplace.visualstudio.com/items?itemName=your-midori-plugin" class="btn btn-primary">Download Now</a>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer>
+  <footer role="contentinfo">
     <div class="container footer-container">
       <div class="footer-logo">Midori</div>
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="team.html">Team</a>
-        <a href="#downloads">Download</a>
-      </div>
+      <nav aria-label="Footer">
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="team.html">Team</a>
+          <a href="index.html#downloads">Download</a>
+        </div>
+      </nav>
       <div class="social-links">
-        <a href="#" class="social-icon">Twitter</a>
-        <a href="#" class="social-icon">LinkedIn</a>
-        <a href="#" class="social-icon">GitHub</a>
+        <a href="#" class="social-icon" aria-label="Twitter">Twitter</a>
+        <a href="#" class="social-icon" aria-label="LinkedIn">LinkedIn</a>
+        <a href="https://github.com/codemidori" class="social-icon" aria-label="GitHub">GitHub</a>
       </div>
       <p>© 2025 Midori. All rights reserved.</p>
     </div>

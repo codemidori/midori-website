@@ -1,107 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Midori - Energy Efficient Code Plugin</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Midori — Energy-Efficient Code Assistant</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
   <!-- NAVIGATION -->
-  <header>
-    <div class="nav-container">
-      <div class="logo">Midori</div>
-      <nav>
-        <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="team.html">Team</a></li>
-          <li><a href="#downloads">Download</a></li>
+  <header class="site-header" role="banner">
+    <div class="container nav-container">
+      <a href="index.html" class="logo" aria-label="Midori home">Midori</a>
+      <nav aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link is-active">Home</a></li>
+          <li><a href="team.html" class="nav-link">Team</a></li>
+          <li><a href="#downloads" class="nav-link">Download</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Write Greener Code</h1>
-      <p>Midori analyzes your code to reduce energy consumption without changing functionality</p>
-      <a href="https://marketplace.visualstudio.com/items?itemName=your-midori-plugin" class="btn-download">Download Now</a>
-    </div>
-  </section>
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <h2 class="hero-stat">Code</h2>
+        <h1 class="hero-title">is burning our planet</h1>
+        <p class="lead">Midori analyzes your code, pinpoints energy hotspots, and suggests safe fixes tailored to your hardware.</p>
+        <div class="hero-ctas">
+          <a href="https://marketplace.visualstudio.com/items?itemName=your-midori-plugin" class="btn btn-primary">Download for VS Code</a>
+          <a href="#features" class="btn btn-ghost">How it works</a>
+        </div>
+        <ul class="hero-points" role="list">
+          <li>Live estimates (W) & hotspot ranking</li>
+          <li>Hardware-aware suggestions</li>
+          <!-- <li>Track efficiency over time</li> -->
+        </ul>
+      </div>
 
-  <!-- WHAT IT IS SECTION -->
-  <section class="what-it-is">
-    <div class="container">
-      <h2>What is Midori?</h2>
-      <div class="info-cards">
-        <div class="card">
-          <img src="assets/icons8-analyze-100.png" alt="Analyze Icon">
-          <h3>Analyze</h3>
-          <p>Scan your project to detect energy-heavy code segments and patterns.</p>
-        </div>
-        <div class="card">
-          <img src="assets/icons8-optimize-100.png" alt="Optimize Icon">
-          <h3>Optimize</h3>
-          <p>Receive actionable suggestions to reduce energy usage in your code.</p>
-        </div>
-        <div class="card">
-          <img src="assets/icons8-track-64.png" alt="Track Icon">
-          <h3>Track</h3>
-          <p>Monitor the energy efficiency of your project over time.</p>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="code-card">
+          <div class="code-header">analysis.js</div>
+<pre class="code"><code>for (const row of bigJson) {
+  // ⚠ hotspot: sync parse inside request loop
+  const data = JSON.parse(row);
+  process(data);
+}
+</code></pre>
+          <div class="result-bar">
+            <div class="metric">
+              <span class="label">Estimated Power</span>
+              <span class="value">2.8 W</span>
+            </div>
+            <a href="#" class="btn btn-small">See fix</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FEATURES SECTION -->
-  <section id="features" class="features">
+  <!-- WHAT IT IS -->
+  <section class="what-it-is" aria-labelledby="what-title">
     <div class="container">
-      <h2>Why Choose Midori?</h2>
+      <h2 id="what-title">What is Midori?</h2>
+      <div class="info-cards">
+        <article class="card">
+          <img src="assets/icons8-track-64.png" alt="Graph trending down" />
+          <h3>Predict</h3>
+          <p>Scan your project to assess how much energy it will consume.</p>
+        </article>
+        <article class="card">
+          <img src="assets/icons8-analyze-100.png" alt="Magnifier analyzing code" />
+          <h3>Analyze</h3>
+          <p>Investigate to detect energy-heavy code segments and patterns.</p>
+        </article>
+        <article class="card">
+          <img src="assets/icons8-optimize-100.png" alt="Optimization sliders" />
+          <h3>Optimize</h3>
+          <p>Get actionable, safe changes to reduce energy usage without changing functionality.</p>
+        </article>
+        <!-- <article class="card">
+          <img src="assets/icons8-track-64.png" alt="Graph trending down" />
+          <h3>Track</h3>
+          <p>Monitor efficiency over time and quantify impact per commit or release.</p>
+        </article> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features" class="features" aria-labelledby="features-title">
+    <div class="container">
+      <h2 id="features-title">Why choose Midori?</h2>
       <div class="features-grid">
         <div class="feature-bubble">
-          <img src="assets/hardware-svgrepo-com.png" alt="Hardware Optimization" class="feature-image">
+          <img src="assets/hardware-svgrepo-com.png" alt="Chip icon" class="feature-image" />
           <div class="feature-text">
-            <h3>Hardware-Specific Optimization</h3>
-            <p>With Midori, users can select the specific hardware they're designing for. Additionally, you can upload custom hardware files to optimize results for your specified hardware, ensuring the best possible performance.</p>
+            <h3>Hardware-specific optimization</h3>
+            <p>Select target hardware—or upload hardware files. Midori tailors suggestions for your device to maximize impact.</p>
           </div>
         </div>
         <div class="feature-bubble">
-          <img src="assets/accuracy-aim-competition-svgrepo-com.png" alt="Real-World Accuracy" class="feature-image">
+          <img src="assets/accuracy-aim-competition-svgrepo-com.png" alt="Target accuracy icon" class="feature-image" />
           <div class="feature-text">
-            <h3>Real-World Accuracy</h3>
-            <p>Midori goes beyond AI by incorporating research-backed methods to parse hardware data. This ensures that our optimizations are not just theoretical but are highly accurate for real-world scenarios.</p>
-          </div>
+            <h3>Real-world accuracy</h3>
+            <p>Powered by a custom AI model trained on hundreds of codebases and hardware profiles to ensure precise energy estimates.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- DOWNLOADS SECTION -->
-  <section id="downloads" class="downloads">
+  <!-- DOWNLOADS -->
+  <section id="downloads" class="downloads" aria-labelledby="download-title">
     <div class="container">
-      <h2>Download Midori</h2>
-      <p>Install Midori directly in VSCode and start making your projects eco-friendly.</p>
-      <a href="https://marketplace.visualstudio.com/items?itemName=your-midori-plugin" class="btn-download">Download Now</a>
+      <h2 id="download-title">Download Midori</h2>
+      <p>Install the VS Code extension and start making your projects more efficient today.</p>
+      <a href="https://marketplace.visualstudio.com/items?itemName=your-midori-plugin" class="btn btn-primary">Download Now</a>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer>
+  <footer role="contentinfo">
     <div class="container footer-container">
       <div class="footer-logo">Midori</div>
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="team.html">Team</a>
-        <a href="#downloads">Download</a>
-      </div>
+      <nav aria-label="Footer">
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="team.html">Team</a>
+          <a href="#downloads">Download</a>
+        </div>
+      </nav>
       <div class="social-links">
-        <a href="#" class="social-icon">Twitter</a>
-        <a href="#" class="social-icon">LinkedIn</a>
-        <a href="#" class="social-icon">GitHub</a>
+        <a href="#" class="social-icon" aria-label="Twitter">Twitter</a>
+        <a href="#" class="social-icon" aria-label="LinkedIn">LinkedIn</a>
+        <a href="#" class="social-icon" aria-label="GitHub">GitHub</a>
       </div>
       <p>© 2025 Midori. All rights reserved.</p>
     </div>
