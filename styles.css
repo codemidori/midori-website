@@ -255,4 +255,42 @@
   
   /* ---------- Utilities ---------- */
   .hidden{ display:none !important; }
-  
+
+/* Demo Video Section */
+.demo-video {
+    padding: 50px 20px;
+    background: var(--bg); /* Use the same background as the rest of the page */
+    text-align: center;
+}
+
+.demo-video h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: var(--ink); /* Ensure text color matches the rest of the page */
+}
+
+.demo-video p {
+    font-size: 1rem;
+    color: var(--muted); /* Use the muted text color for consistency */
+    margin-bottom: 30px;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    border-radius: var(--radius); /* Use the same border radius as other sections */
+    box-shadow: var(--shadow-md); /* Add a subtle shadow for consistency */
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
