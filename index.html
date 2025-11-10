@@ -32,25 +32,24 @@
         <h1 class="hero-title">is burning our planet</h1>
         <p class="lead">Midori analyzes your code, pinpoints energy hotspots, and suggests safe fixes tailored to your hardware.</p>
         <div class="hero-ctas">
-          <a href="https://marketplace.visualstudio.com/items?itemName=your-midori-plugin" class="btn btn-primary">Download for VS Code</a>
+          <!-- Updated button to trigger the modal -->
+          <button class="btn btn-primary" onclick="openModal()">Download for VS Code</button>
           <a href="#features" class="btn btn-ghost">How it works</a>
         </div>
         <ul class="hero-points" role="list">
           <li>Live estimates (W) & hotspot ranking</li>
           <li>Hardware-aware suggestions</li>
-          <!-- <li>Track efficiency over time</li> -->
         </ul>
       </div>
 
       <div class="hero-visual" aria-hidden="true">
         <div class="code-card">
           <div class="code-header">analysis.js</div>
-<pre class="code"><code>for (const row of bigJson) {
-  // ⚠ hotspot: sync parse inside request loop
-  const data = JSON.parse(row);
-  process(data);
-}
-</code></pre>
+            <pre class="code"><code>for (const row of bigJson) {
+              // ⚠ hotspot: sync parse inside request loop
+              const data = JSON.parse(row);
+              process(data);
+            }</code></pre>
           <div class="result-bar">
             <div class="metric">
               <span class="label">Estimated Power</span>
@@ -117,17 +116,17 @@
       <h2 id="features-title">Why choose Midori?</h2>
       <div class="features-grid">
         <div class="feature-bubble">
-          <img src="assets/hardware-svgrepo-com.png" alt="Chip icon" class="feature-image" />
-          <div class="feature-text">
-            <h3>Hardware-specific optimization</h3>
-            <p>Select target hardware—or upload hardware files. Midori tailors suggestions for your device to maximize impact.</p>
-          </div>
-        </div>
-        <div class="feature-bubble">
           <img src="assets/accuracy-aim-competition-svgrepo-com.png" alt="Target accuracy icon" class="feature-image" />
           <div class="feature-text">
             <h3>Real-world accuracy</h3>
             <p>Powered by a custom AI model trained on hundreds of codebases and hardware profiles to ensure precise energy estimates.</p>
+          </div>
+        </div>
+        <div class="feature-bubble">
+          <img src="assets/hardware-svgrepo-com.png" alt="Chip icon" class="feature-image" />
+          <div class="feature-text">
+            <h3>Hardware-specific optimization</h3>
+            <p>Select target hardware, or contact us to tailor Midori for your custom hardware. Midori provides suggestions for your hardware to maximize impact.</p>
           </div>
         </div>
       </div>
@@ -139,9 +138,18 @@
     <div class="container">
       <h2 id="download-title">Download Midori</h2>
       <p>Install the VS Code extension and start making your projects more efficient today.</p>
-      <a href="https://marketplace.visualstudio.com/items?itemName=your-midori-plugin" class="btn btn-primary">Download Now</a>
+      <button class="btn btn-primary" onclick="openModal()">Download Now</button>
     </div>
   </section>
+
+  <!-- MODAL -->
+  <div id="download-modal" class="modal" aria-hidden="true" style="display: none;">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close modal">&times;</button>
+      <h3>Midori is currently in the process of being published to the public VS marketplace.</h3>
+      <p>In the meantime, if you would like to chat, demo or request a consultation to tailor Midori for your custom hardware, please contact <a href="mailto:codemidori@gmail.com">codemidori@gmail.com</a>.</p>
+    </div>
+  </div>
 
   <!-- FOOTER -->
   <footer role="contentinfo">
@@ -157,5 +165,22 @@
       <p>© 2025 Midori. All rights reserved.</p>
     </div>
   </footer>
+
+  <script>
+    function openModal() {
+      const modal = document.getElementById('download-modal');
+      modal.style.display = 'flex';   // <-- was 'block'
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden'; // optional: prevent background scroll
+    }
+  
+    function closeModal() {
+      const modal = document.getElementById('download-modal');
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = ''; // restore scroll
+    }
+  </script>
+  
 </body>
 </html>
