@@ -353,3 +353,8 @@
   color: var(--muted);
   cursor: pointer;
 }
+
+/* Highlight Red for "burning" */
+.highlight-red {
+    color: #b91c1c; /* A darker, muted red that fits the UI */
+}
